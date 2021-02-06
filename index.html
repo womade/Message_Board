@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>楊遠徵の留言板</title>
+<link rel="shortcut icon" href="https://s.ssss.fun/ICON/Z.ico">
+<link href="https://cdn.ssss.fun/message-board/css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="wrap">
+	<h1>楊遠徵の留言板</h1>
+	<div id='form_wrap'>
+		<form method="post" action="https://api.ssss.fun/push/post.php">
+			<p>你好小羊</p>
+			<br>
+			<label for="email">留言内容：</label>
+			<input type="hidden" name="formname1" value="留言内容：" />
+			<textarea  name="formtext1" placeholder="请输入您要留言的内容吧" value="" id="message" ></textarea>
+			<input type="hidden" name="subject" value="楊遠徵の留言板" />
+			<label for="name">您的名字：</label>
+			<input type="hidden" name="formname2" value="姓名：" />
+			<input type="text" name="formtext2" placeholder="请输入您的名字" value="" id="name" />
+			<label for="email">联系方式：</label>
+			<input type="hidden" name="formname3" value="联系方式：" />
+			<input type="text" name="formtext3" placeholder="请输入联系方式" value="" id="contact" />
+			<input type="submit" name ="submit" value="我写好了" />
+		</form>
+	</div>
+</div>
+</body>
+</html>
