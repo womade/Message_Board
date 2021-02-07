@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>楊遠徵の留言板</title>
 <link rel="shortcut icon" href="https://s.ssss.fun/ICON/Z.ico">
 <link href="https://cdn.ssss.fun/message-board/css/style.css" type="text/css" rel="stylesheet" />
-    <script src="https://cdn.ssss.fun/message-board/js/jquery.min.js"></script>
-    <script src="https://cdn.ssss.fun/message-board/js/alert.js"></script>
-    <script type="text/javascript">
+<script src="https://cdn.ssss.fun/message-board/js/jquery.min.js"></script>
+<script src="https://cdn.ssss.fun/message-board/js/alert.js"></script>
+<script type="text/javascript">
         function spush() {
             $.ajax({
                 type: "POST",
                 dataType: "json",
                 url: "https://api.ssss.fun/push/post.php",
-                data: $('#form1').serialize(),
+                data: $('#sform').serialize(),
                 success: function (result) {
                     console.log(result);//打印服务端返回的数据（调试用）
                     if (result.resultCode == 1) {
@@ -32,7 +32,7 @@
 <div id="wrap">
 	<h1>楊遠徵の留言板</h1>
 	<div id='form_wrap'>
-		<form method="post" action="https://api.ssss.fun/push/post.php">
+		<form id="sform" onsubmit="return false" action="##" method="post">
 			<p>你好小羊</p>
 			<br>
 			<label for="email">留言内容：</label>
@@ -45,7 +45,7 @@
 			<label for="email">联系方式：</label>
 			<input type="hidden" name="a3" value="联系方式：" />
 			<input type="text" name="b3" placeholder="请输入联系方式" value="" id="contact" />
-			<input type="submit" name ="submit" value="我写好了" />
+			<input type="submit" value="我写好了" onclick="spush()">
 		</form>
 	</div>
 </div>
