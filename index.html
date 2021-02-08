@@ -13,6 +13,7 @@
     <script src="https://cdn.ssss.fun/message-board/js/alert.js"></script>
     <script type="text/javascript">
         function spush() {
+            alert("⌛ 正在发送……");
             $.ajax({
                 type: "POST",
                 dataType: "json",
@@ -21,12 +22,12 @@
                 success: function (result) {
                     console.log(result);//打印服务端返回的数据（调试用）
                     if (result.resultCode == 1) {
-                        alert("🙂 邮件发送成功！");
+                        alert("🙂 发送成功！");
                     }
                     ;
                 },
                 error : function() {
-                    alert("😟 邮件发送失败！");
+                    alert("😟 发送失败！");
                 }
             });
         }
