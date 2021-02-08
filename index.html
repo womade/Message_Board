@@ -9,33 +9,32 @@
 <title>楊遠徵の留言板</title>
 <link rel="shortcut icon" href="https://s.ssss.fun/ICON/Z.ico">
 <link href="https://cdn.ssss.fun/message-board/css/style.css" type="text/css" rel="stylesheet" />
-    <script src="https://cdn.ssss.fun/message-board/js/jquery.min.js"></script>
-    <script src="https://cdn.ssss.fun/message-board/js/alert.js"></script>
-    <script type="text/javascript">
-        function spush() {
-            alert("⌛ 正在发送……");
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "https://api.ssss.fun/push/post.php",
-                data: $('#sform').serialize(),
-                success: function (result) {
-                    console.log(result);//打印服务端返回的数据（调试用）
-                    if (result.resultCode == 1) {
-                        alert("🙂 发送成功！");
-                    }
-                    ;
-                },
-                error : function() {
-                    alert("😟 发送失败！");
-                }
-            });
-        }
-    </script>
+<script src="https://cdn.ssss.fun/message-board/js/jquery.min.js"></script>
+<script src="https://cdn.ssss.fun/message-board/js/alert.js"></script>
+<script type="text/javascript">
+function spush() {
+	alert("⌛ 正在发送……");
+	$.ajax({
+		type: "POST",
+		dataType: "json",
+		url: "https://api.ssss.fun/push/post.php",
+		data: $('#sform').serialize(),
+		success: function (result) {
+				console.log(result); //打印服务端返回的数据（调试用）
+				if (result.resultCode == 1) {
+					alert("🙂 发送成功！");
+				};
+			},
+			error: function () {
+				alert("😟 发送失败！");
+			}
+	});
+}
+</script>
 </head>
 <body>
 <div id="wrap">
-	<h1>楊遠徵の留言板</h1>
+    <h1>楊遠徵の留言板</h1>
 	<div id='form_wrap'>
 		<form id="sform" onsubmit="return false" action="##" method="post">
 			<p>你好小羊</p>
