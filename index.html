@@ -34,6 +34,18 @@ $(function() {
 </script>
 <script type="text/javascript">
 function spush() {
+	if (document.getElementById("message").value.length < 3) {
+		alert("🤔 留言内容是不是有点少呀？");
+		return;
+}
+	if (document.getElementById("name").value == "") {
+		alert("🤔 怎么称呼您呢？");
+		return;
+}
+	if (document.getElementById("contact").value == "") {
+		alert("🤔 怎么回复您呢？");
+		return;
+}
 	alert("⌛ 正在发送……");
 	$.ajax({
 		type: "POST",
